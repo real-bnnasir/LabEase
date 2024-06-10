@@ -1,0 +1,13 @@
+/* canvas {
+    width: 50%;
+    margin: auto;
+} */
+body{
+    /* background: #aaa; */
+}
+canvas{
+    height: 100%;
+    color: white;
+    padding: 0 15px;
+    width: 100%;
+}

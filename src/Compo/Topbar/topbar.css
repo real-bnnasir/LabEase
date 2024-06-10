@@ -1,0 +1,138 @@
+.topbar.open {
+    /* transform: translate(200px); */
+    margin-left: 210px;
+    /* Shift topbar along with sidebar */
+}
+
+.toggler {
+    background: none;
+    border: none;
+    color: #000435;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+    border-radius: 8px;
+    color: #000435;
+    padding: 10px;
+    padding-right: 20px;
+    z-index: 1001;
+    transition: margin-left 0.3s ease;
+    margin: 5px 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar.scrolled {
+    background-color: #eee;
+    transition: background-color 0.8s ease;
+    border: .5px solid #ccc;
+}
+
+.icons {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification {
+    position: relative;
+    background: #ccc;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bell-icon {
+    width: 100%;
+    height: 100%;
+    color: #000435;
+}
+
+.notification .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+}
+
+.profile {
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 100px;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+}
+
+.h1 {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+    height: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid #000435;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    transition: width 0.8s ease;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0;
+    outline: none;
+    width: 0;
+    opacity: 0;
+    transition: width 0.8s ease, opacity 0.8s ease;
+}
+
+.search-bar:hover {
+    width: 200px;
+}
+
+.search-bar:hover input {
+    width: 100%;
+    opacity: 1;
+}
+
+.search-icon {
+    padding: 8px;
+    background: #000435;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

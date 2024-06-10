@@ -1,0 +1,20 @@
+/* App.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.MuiTableContainer-root {
+    margin: 20px;
+}
+
+.MuiButton-contained {
+    background-color: #1976d2;
+    color: white;
+}
+
+.MuiButton-contained:hover {
+    background-color: #115293;
+}
