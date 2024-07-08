@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer,
-  TableHead, TableRow, Paper, Avatar, Button, Tooltip, Grid, Typography, ButtonGroup, FormControl, InputLabel, Select, MenuItem, Divider, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField
+  TableHead, TableRow, Paper, Avatar, Button, Tooltip, Grid, Typography, ButtonGroup, FormControl, InputLabel, Select, MenuItem, Divider, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Box
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { styled } from '@mui/system';
 import me1 from '../../Assets/Photos/me1.jpeg';
 import me2 from '../../Assets/Photos/me2.jpg';
@@ -14,7 +14,6 @@ import yaya from '../../Assets/Photos/yaya.JPG';
 const HoverAvatar = styled(Avatar)({
   width: 40,
   height: 40,
-  display: 'flex',
   transition: 'transform 0.2s',
   '&:hover': {
     transform: 'scale(1.2)',
@@ -31,164 +30,163 @@ const StripedTableRow = styled(TableRow)(({ stripe }) => ({
   backgroundColor: stripe ? '#f9f9f9' : '#ffffff',
 }));
 
-
-const initialGroups = [
+export const initialGroups = [
+  // Initial groups data
   {
-    id: 1, segment: 'A', members:
-      [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir' }, // No photo provided
-      ]
-    , taxStatus: 'Submitted'
+    id: 1, segment: 'A', members: [
+      { name: 'Abdurrahman Nasir', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG124', status: 'Carry Over' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG125', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG126', status: 'Spill Over' },
+      { name: 'Real Bn Nasir', registrationNumber: 'REG127', status: 'Regular' }
+    ], taxStatus: 'Submitted'
   },
   {
     id: 1, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 2, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Submitted'
   },
   {
     id: 2, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 3, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 3, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 4, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 4, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 5, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir' }, // No photo provided
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir' ,registrationNumber: 'REG123', status: 'Regular' }, // No photo provided
       ]
     , taxStatus: 'Submitted'
   },
   {
     id: 5, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 6, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Submitted'
   },
   {
     id: 6, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 },
-        { name: 'Zakariyya Sani', photo: zaks },
-        { name: 'Yahya Abba', photo: yaya },
-        { name: 'Abdulmalik Umar', photo: malik },
-        { name: 'Real Bn Nasir', photo: me2 },
+        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 8, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 8, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 10, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 10, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 },
-      { name: 'Zakariyya Sani', photo: zaks },
-      { name: 'Yahya Abba', photo: yaya },
-      { name: 'Abdulmalik Umar', photo: malik },
-      { name: 'Real Bn Nasir', photo: me2 },
+      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   // Add more groups as needed
 ];
+
 
 
 const Report = () => {
@@ -197,9 +195,8 @@ const Report = () => {
   const [open, setOpen] = useState(false);
   const [groups, setGroups] = useState(initialGroups);
   const [newGroup, setNewGroup] = useState({ id: '', segment: '' });
-
-  let currentGroup = null;
-  let stripe = false;
+  const [viewGroup, setViewGroup] = useState(null); // State to track the group to be viewed
+  const navigate = useNavigate();
 
   const handleButtonClick = (level) => {
     setSelectedLevel(level);
@@ -223,138 +220,183 @@ const Report = () => {
   };
 
   const handleSubmit = () => {
-    // Add the new group to the list
-    setGroups([...groups, { ...newGroup, members: [], taxStatus: 'Submitted' }]);
+    setGroups([...groups, { ...newGroup, members: [] }]);
     setOpen(false);
+    setNewGroup({ id: '', segment: '' });
+  };
+
+  const isFormValid = newGroup.id !== '' && newGroup.segment !== '';
+
+  let currentGroup = null;
+  let stripe = false;
+
+  const handleViewClick = (group) => {
+    navigate(`/groupview/${group.id}/${group.segment}`);
+  };
+
+  const handleViewClose = () => {
+    setViewGroup(null);
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Grid container direction="column" style={{ padding: '16px' }}>
-        <Grid item >
-          <TableCell>
+    <Box>
+      <TableContainer component={Paper}>
+        <Grid container direction="column" style={{ padding: '16px' }}>
+          <Grid item>
             <Button variant="contained" component={Link} to="/dashboard">Back</Button>
-          </TableCell>
-          <Typography variant="h6" textAlign='center'>Report</Typography>
-        </Grid>
-        <Divider />
-        <Grid item container spacing={2} alignItems="center" display='flex' justifyContent='space-between' style={{ marginTop: '8px' }}>
-          <Grid item>
-            <FormControl variant="outlined" style={{ minWidth: 200 }}>
-              <InputLabel id="course-select-label">Select Course</InputLabel>
-              <Select
-                labelId="course-select-label"
-                value={selectedCourse}
-                onChange={handleCourseChange}
-                label="Select Course"
-              >
-                <MenuItem value=""><em>None</em></MenuItem>
-                <MenuItem value="Biology">Biology</MenuItem>
-                <MenuItem value="Chemistry">Chemistry</MenuItem>
-                <MenuItem value="Physics">Physics</MenuItem>
-                <MenuItem value="Mathematics">Mathematics</MenuItem>
-                <MenuItem value="Computer Science">Computer Science</MenuItem>
-                <MenuItem value="Environmental Science">Environmental Science</MenuItem>
-                <MenuItem value="Astronomy">Astronomy</MenuItem>
-                <MenuItem value="Geology">Geology</MenuItem>
-                <MenuItem value="Statistics">Statistics</MenuItem>
-                <MenuItem value="Biotechnology">Biotechnology</MenuItem>
-              </Select>
-            </FormControl>
+            <Typography variant="h6" textAlign='center'>Report</Typography>
           </Grid>
-          <Grid item>
-            <ButtonGroup variant="contained">
-              {[1, 2, 3, 4].map((level) => (
-                <Button
-                  key={level}
-                  onClick={() => handleButtonClick(level)}
-                  style={{
-                    backgroundColor: selectedLevel === level ? 'white' : 'initial',
-                    color: selectedLevel === level ? 'black' : 'initial',
-                  }}
+          <Divider />
+          <Grid item container spacing={2} alignItems="center" display='flex' justifyContent='space-between' style={{ marginTop: '8px' }}>
+            <Grid item>
+              <FormControl variant="outlined" style={{ minWidth: 200 }}>
+                <InputLabel id="course-select-label">Select Course</InputLabel>
+                <Select
+                  labelId="course-select-label"
+                  value={selectedCourse}
+                  onChange={handleCourseChange}
+                  label="Select Course"
                 >
-                  Level {level}
-                </Button>
-              ))}
-            </ButtonGroup>
+                  <MenuItem value=""><em>None</em></MenuItem>
+                  <MenuItem value="Biology">Biology</MenuItem>
+                  <MenuItem value="Chemistry">Chemistry</MenuItem>
+                  <MenuItem value="Physics">Physics</MenuItem>
+                  <MenuItem value="Mathematics">Mathematics</MenuItem>
+                  <MenuItem value="Computer Science">Computer Science</MenuItem>
+                  <MenuItem value="Environmental Science">Environmental Science</MenuItem>
+                  <MenuItem value="Astronomy">Astronomy</MenuItem>
+                  <MenuItem value="Geology">Geology</MenuItem>
+                  <MenuItem value="Statistics">Statistics</MenuItem>
+                  <MenuItem value="Biotechnology">Biotechnology</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <ButtonGroup variant="contained">
+                {[1, 2, 3, 4].map((level) => (
+                  <Button
+                    key={level}
+                    onClick={() => handleButtonClick(level)}
+                    style={{
+                      backgroundColor: selectedLevel === level ? 'white' : 'initial',
+                      color: selectedLevel === level ? 'black' : 'initial',
+                    }}
+                  >
+                    Level {level}
+                  </Button>
+                ))}
+              </ButtonGroup>
+            </Grid>
+          </Grid>
+          <Grid container item display='flex' justifyContent='center' alignItems='center'>
+            <Typography style={{ fontWeight: '700' }}>{selectedCourse} Department</Typography>
           </Grid>
         </Grid>
-        <Button variant="contained" color="primary" onClick={handleOpen} style={{ marginTop: '16px' }}>
-          Add New Group
-        </Button>
-      </Grid>
-      <Table>
-        <TableHead>
-          <StyledTableHeadRow>
-            <TableCell>Group</TableCell>
-            <TableCell>Members</TableCell>
-            <TableCell>Tax Status</TableCell>
-            <TableCell>Action</TableCell>
-          </StyledTableHeadRow>
-        </TableHead>
-        <TableBody>
-          {groups.map((group, index) => {
-            if (group.id !== currentGroup) {
-              currentGroup = group.id;
-              stripe = !stripe;
-            }
-            return (
-              <StripedTableRow key={index} stripe={stripe}>
-                <TableCell>Group {group.id}-{group.segment}</TableCell>
-                <TableCell>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {group.members.map((member, idx) => (
-                      <Tooltip title={member.name} key={idx} arrow>
+        <Table>
+          <TableHead>
+            <StyledTableHeadRow>
+              <TableCell>Group</TableCell>
+              <TableCell>Members</TableCell>
+              <TableCell>Tax Status</TableCell>
+              <TableCell>Action</TableCell>
+            </StyledTableHeadRow>
+          </TableHead>
+          <TableBody>
+            {groups.map((group, index) => {
+              if (group.id !== currentGroup) {
+                currentGroup = group.id;
+                stripe = !stripe;
+              }
+              return (
+                <StripedTableRow key={index} stripe={stripe}>
+                  <TableCell>Group {group.id}-{group.segment}</TableCell>
+                  <TableCell>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      {group.members.map((member, idx) => (
+                        <Tooltip title={member.name} key={idx} arrow>
+                          <HoverAvatar src={member.photo || undefined} alt={member.name} />
+                        </Tooltip>
+                      ))}
+                    </div>
+                  </TableCell>
+                  <TableCell style={{ color: group.taxStatus === 'Submitted' ? 'green' : 'red' }}>
+                    {group.taxStatus}
+                  </TableCell>
+                  <TableCell>
+                    <Button variant="contained" onClick={() => handleViewClick(group)} style={{ width: '50%' }}>View</Button>
+                  </TableCell>
+                </StripedTableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Add New Group</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Please fill in the details for the new group.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="id"
+              label="Group ID"
+              type="number"
+              fullWidth
+              value={newGroup.id}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="dense"
+              name="segment"
+              label="Segment"
+              type="text"
+              fullWidth
+              value={newGroup.segment}
+              onChange={handleChange}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={handleSubmit} color="primary" disabled={!isFormValid}>
+              Add
+            </Button>
+          </DialogActions>
+        </Dialog>
+        <Dialog open={viewGroup !== null} onClose={handleViewClose}>
+          <DialogTitle>Group Details</DialogTitle>
+          <DialogContent>
+            {viewGroup && (
+              <Box>
+                <Typography variant="h6">Group {viewGroup.id}-{viewGroup.segment}</Typography>
+                <Typography variant="subtitle1">Members:</Typography>
+                <ul>
+                  {viewGroup.members.map((member, idx) => (
+                    <li key={idx}>
+                      <Tooltip title={member.name} arrow>
                         <HoverAvatar src={member.photo || undefined} alt={member.name} />
                       </Tooltip>
-                    ))}
-                  </div>
-                </TableCell>
-                <TableCell style={{ color: group.taxStatus === 'Submitted' ? 'green' : 'red' }}>
-                  {group.taxStatus}
-                </TableCell>
-                <TableCell>
-                  <Button variant="contained">View</Button>
-                </TableCell>
-              </StripedTableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add New Group</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Please fill in the details for the new group.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="id"
-            label="Group ID"
-            type="number"
-            fullWidth
-            onChange={handleChange}
-          />
-          <TextField
-            margin="dense"
-            name="segment"
-            label="Segment"
-            type="text"
-            fullWidth
-            onChange={handleChange}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleSubmit} color="primary">
-            Add
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </TableContainer>
+                      {member.name}
+                    </li>
+                  ))}
+                </ul>
+                <Typography variant="subtitle1">Tax Status: {viewGroup.taxStatus}</Typography>
+              </Box>
+            )}
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleViewClose} color="primary">
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </TableContainer>
+      <Button variant="contained" color="primary" onClick={handleOpen} style={{ marginTop: '16px' }}>
+        Add New Group
+      </Button>
+    </Box>
   );
 };
 

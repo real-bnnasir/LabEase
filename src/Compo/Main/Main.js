@@ -9,6 +9,7 @@ import Analysis from '../../pages/Analysis/Analysis';
 import Report from '../../pages/Report/Report';
 import History from '../../pages/History/History';
 import Settings from '../../pages/Settings/Settings'
+import GroupView from '../../pages/Report/GroupView';
 
 const Main = ({ contentShift }) => {
     return (
@@ -20,6 +21,7 @@ const Main = ({ contentShift }) => {
                 <Route path='/datamanage' element={<Data_M />} />
                 <Route path='/analysis' element={<Analysis />} />
                 <Route path='/report' element={<Report />} />
+                <Route path="/groupview/:groupId/:segment" element={<GroupView />} />
                 <Route path='/history' element={<History />} />
                 <Route path='/settings' element={<Settings />} /> 
             </Routes>
