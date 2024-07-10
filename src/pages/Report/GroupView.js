@@ -6,12 +6,14 @@ import {
 } from '@mui/material';
 import { IoArrowBack } from 'react-icons/io5';
 import { initialGroups } from './Report'; // Adjust the path accordingly
+import { Collapse, Card, CardContent } from '@mui/material';
 
 const GroupView = () => {
     const navigate = useNavigate();
     const { groupId, segment } = useParams();
     const [open, setOpen] = useState(false);
     const [selectedMember, setSelectedMember] = useState(null);
+    const [collapseOpen, setCollapseOpen] = useState(false);
 
     const group = initialGroups.find(
         (g) => g.id.toString() === groupId && g.segment === segment
@@ -35,19 +37,24 @@ const GroupView = () => {
         setSelectedMember(null);
     };
 
+    const toggleCollapse = () => {
+        setCollapseOpen(!collapseOpen);
+    };
+
     return (
         <Box p={2}>
             <Button
                 variant="contained"
                 startIcon={<IoArrowBack />}
                 onClick={handleGoBack}
-                style={{ marginBottom: '16px' }}
+                style={{ marginBottom: '16px', background: '#000435' }}
             >
                 Go Back
             </Button>
-            <Typography variant="h4" gutterBottom>
-                Group {groupId}-{segment} Details
+            <Typography variant="h5" gutterBottom sx={{ display: 'flex', justifyContent: 'center', background: '#000435', color: 'white' }}>
+                Group <span style={{ fontWeight: "700" }}>{groupId}-{segment} </span> Details
             </Typography>
+            <Typography variant='h4' style={{ fontWeight: '700', display: 'flex', justifyContent: "center", color: "#000435" }}>Members</Typography>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
@@ -77,14 +84,53 @@ const GroupView = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={handleEditGroupMembers}
-                style={{ marginTop: '16px' }}
-            >
-                Edit Group Members
-            </Button>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', alignSelf: 'flex-end' }}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleEditGroupMembers}
+                    style={{ marginTop: '16px', background: '#000435' }}
+                >
+                    Edit Group Members
+                </Button>
+            </div>
+
+            <Typography variant='h4' style={{ fontWeight: '700', display: 'flex', justifyContent: "center", color: "#000435", marginTop: '32px' }}>Tax Details</Typography>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Status</TableCell>
+                            <TableCell align="right">Action</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell>{group.taxStatus}</TableCell>
+                            <TableCell align="right">
+                                <Button variant="contained" onClick={toggleCollapse} style={{ background: '#000435' }}>
+                                    View
+                                </Button>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell colSpan={2}>
+                                <Collapse in={collapseOpen}>
+                                    <Card>
+                                        <CardContent>
+                                            {/* Your tax details content here */}
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                Tax Details content goes here. This can include more information about the tax status.
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Collapse>
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
+
             <Modal
                 open={open}
                 onClose={handleClose}

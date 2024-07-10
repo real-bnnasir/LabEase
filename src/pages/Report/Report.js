@@ -44,144 +44,144 @@ export const initialGroups = [
   {
     id: 1, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 2, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Submitted'
   },
   {
     id: 2, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 3, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 3, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 4, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 4, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 5, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir' ,registrationNumber: 'REG123', status: 'Regular' }, // No photo provided
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', registrationNumber: 'REG123', status: 'Regular' }, // No photo provided
       ]
     , taxStatus: 'Submitted'
   },
   {
     id: 5, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 6, segment: 'A', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Submitted'
   },
   {
     id: 6, segment: 'B', members:
       [
-        { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-        { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+        { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
       ], taxStatus: 'Failed'
   },
   {
     id: 8, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 8, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   {
     id: 10, segment: 'A', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Submitted'
   },
   {
     id: 10, segment: 'B', members: [
-      { name: 'Abdurrahman Nasir  ', photo: me1 ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Zakariyya Sani', photo: zaks ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Yahya Abba', photo: yaya ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Abdulmalik Umar', photo: malik ,registrationNumber: 'REG123', status: 'Regular' },
-      { name: 'Real Bn Nasir', photo: me2 ,registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdurrahman Nasir  ', photo: me1, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Zakariyya Sani', photo: zaks, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Yahya Abba', photo: yaya, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Abdulmalik Umar', photo: malik, registrationNumber: 'REG123', status: 'Regular' },
+      { name: 'Real Bn Nasir', photo: me2, registrationNumber: 'REG123', status: 'Regular' },
     ], taxStatus: 'Failed'
   },
   // Add more groups as needed
@@ -243,7 +243,7 @@ const Report = () => {
       <TableContainer component={Paper}>
         <Grid container direction="column" style={{ padding: '16px' }}>
           <Grid item>
-            <Button variant="contained" component={Link} to="/dashboard">Back</Button>
+            <Button variant="contained" component={Link} to="/dashboard" style={{ background: '#000435' }}>Back</Button>
             <Typography variant="h6" textAlign='center'>Report</Typography>
           </Grid>
           <Divider />
@@ -323,7 +323,7 @@ const Report = () => {
                     {group.taxStatus}
                   </TableCell>
                   <TableCell>
-                    <Button variant="contained" onClick={() => handleViewClick(group)} style={{ width: '50%' }}>View</Button>
+                    <Button variant="contained" onClick={() => handleViewClick(group)} style={{ width: '50%', background: '#000435' }}>View</Button>
                   </TableCell>
                 </StripedTableRow>
               );
@@ -393,9 +393,11 @@ const Report = () => {
           </DialogActions>
         </Dialog>
       </TableContainer>
-      <Button variant="contained" color="primary" onClick={handleOpen} style={{ marginTop: '16px' }}>
-        Add New Group
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', alignSelf: 'flex-end' }}>
+        <Button variant="contained" color="primary" onClick={handleOpen} style={{ marginTop: '16px', background: '#000435' }}>
+          Add New Group
+        </Button>
+      </div>
     </Box>
   );
 };
