@@ -66,7 +66,7 @@ const GroupView = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {group?.members.map((member, idx) => (
+                        {group.members.map((member, idx) => (
                             <TableRow key={idx}>
                                 <TableCell>
                                     <Avatar
