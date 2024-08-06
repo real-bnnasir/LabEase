@@ -5,6 +5,7 @@ import 'chart.js/auto'
 import PolarChart from './PolarChart'
 import RadarChart from './RadarChart'
 import DoughnutChart from './DoughnutChart';
+import LineChart from './LineChart';
 
 const Analysis = () => {
 
@@ -106,9 +107,15 @@ const Analysis = () => {
               <Card>
               <RadarChart />
               </Card>
-            </Col><Col md={6}>
+            </Col>
+            <Col md={6}>
               <Card>
               <DoughnutChart />
+              </Card>
+            </Col>
+            <Col md={6}>
+              <Card>
+              <LineChart />
               </Card>
             </Col>
           </Row>
