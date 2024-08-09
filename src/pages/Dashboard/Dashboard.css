@@ -11,3 +11,9 @@ canvas{
     padding: 0 15px;
     width: 100%;
 }
+
+.announcement-btn{
+    background: transparent;
+    border: 0;
+    color: white;
+}

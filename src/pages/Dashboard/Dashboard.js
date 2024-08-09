@@ -10,6 +10,7 @@ import DoughnutChart from './Component/DoughnutChart';
 import { Card } from 'reactstrap';
 import LineChart from './Component/LineChart';
 import TableContent from './Component/TableContent';
+import Semi_Dashboard from './Component/Semi_Dashboard'
 
 const Dashboard = () => {
   const chartHeight = '400px';
@@ -73,6 +74,9 @@ const Dashboard = () => {
             </Grid>
           </Grid>
         </Grid>
+      </Box>
+      <Box mt={3}>
+        <Semi_Dashboard />
       </Box>
       <Box mt={3}>
         <Grid container spacing={3}>

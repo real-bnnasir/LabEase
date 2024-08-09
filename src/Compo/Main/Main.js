@@ -5,6 +5,7 @@ import Dashboard from '../../pages/Dashboard/Dashboard';
 import Experiment from '../../pages/Experiment/Experiment';
 import Task_M from '../../pages/Task_Management/Task_M';
 import Data_M from '../../pages/Data_Management/Data_M';
+import Session_M from '../../pages/Session_Management/Session_M'
 import Analysis from '../../pages/Analysis/Analysis';
 import Report from '../../pages/Report/Report';
 import History from '../../pages/History/History';
@@ -15,10 +16,11 @@ const Main = ({ contentShift }) => {
     return (
         <div className={`main ${contentShift ? 'shifted' : ''}`}>
             <Routes>
-                <Route path='/dashboard' element={<Dashboard />} />
+                <Route exact path='/dashboard' element={<Dashboard />} />
                 <Route path='/experimants' element={<Experiment />} />
                 <Route path='/taskmanage' element={<Task_M />} />
                 <Route path='/datamanage' element={<Data_M />} />
+                <Route path='/session_management' element={<Session_M />} />
                 <Route path='/analysis' element={<Analysis />} />
                 <Route path='/report' element={<Report />} />
                 <Route path="/groupview/:groupId/:segment" element={<GroupView />} />
