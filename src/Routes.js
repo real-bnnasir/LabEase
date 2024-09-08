@@ -21,9 +21,23 @@ export const RouteItem = [
     },
     {
         id: 3,
-        path: '/taskmanage',
-        name: 'Task Management',
+        path: '/studentmanage',
+        name: 'Management',
         icon: <FaTasks />,
+        child: [
+            {
+                id: 1,
+                path: '/studentmanage/classmanage',
+                name: 'Class Management',
+                icon: ''
+            },
+            {
+                id: 2,
+                path: '/studentmanage/groupmanage',
+                name: 'Group Management',
+                icon: ''
+            },
+        ]
     },
     {
         id: 4,
@@ -54,5 +68,11 @@ export const RouteItem = [
         path: '/settings',
         name: 'Settings',
         icon: <IoSettingsOutline     />,
+    },
+    {
+        id: 9,
+        path: '/gpt_try',
+        name: 'GPT-Try',
+        icon: <FaHistory />,
     },
 ]

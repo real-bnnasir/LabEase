@@ -9,7 +9,12 @@ import Analysis from '../../pages/Analysis/Analysis';
 import Report from '../../pages/Report/Report';
 import History from '../../pages/History/History';
 import Settings from '../../pages/Settings/Settings'
-import GroupView from '../../pages/Report/GroupView';
+import GroupView from '../../pages/View/GroupView';
+import GPTtry from '../../pages/GPTtry'
+import Footer from '../Footer/Footer';
+import ClassManage from '../../pages/Task_Management/Child/ClassManage'
+import GroupManage from '../../pages/Task_Management/Child/GroupManage'
+import ReportView from '../../pages/View/ReportView'
 
 const Main = ({ contentShift }) => {
     return (
@@ -17,14 +22,21 @@ const Main = ({ contentShift }) => {
             <Routes>
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/experimants' element={<Experiment />} />
-                <Route path='/taskmanage' element={<Task_M />} />
+                <Route path='/studentmanage' element={<Task_M />} />
+                {/* =======================child========================== */}
+                <Route path='/studentmanage/classmanage' element={<ClassManage />} />
+                <Route path='/studentmanage/groupmanage' element={<GroupManage />} />
+                <Route path="/groupview/:groupId/:segment" element={<GroupView />} />
+
                 <Route path='/datamanage' element={<Data_M />} />
                 <Route path='/analysis' element={<Analysis />} />
                 <Route path='/report' element={<Report />} />
-                <Route path="/groupview/:groupId/:segment" element={<GroupView />} />
+                <Route path="/reportview/:reportId/:segment" element={<ReportView />} />
                 <Route path='/history' element={<History />} />
-                <Route path='/settings' element={<Settings />} /> 
+                <Route path='/settings' element={<Settings />} />
+                <Route path='/gpt_try' element={<GPTtry />} />
             </Routes>
+            {/* <Footer /> */}
             <h2>Main Content</h2>
         </div>
     );

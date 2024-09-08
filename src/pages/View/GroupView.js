@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
-    Button, Box, Avatar, Typography, Grid,
-    Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Modal
+    Button, Box, Avatar, Typography,
+    Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,
 } from '@mui/material';
 import { IoArrowBack } from 'react-icons/io5';
-import { initialGroups } from './Report'; // Adjust the path accordingly
-import { Collapse, Card, CardContent } from '@mui/material';
+import { initialGroups } from '../Report/Report'; // Adjust the path accordingly
+import { Collapse } from '@mui/material';
+import TabView from '../Report/child/TabView';
 
 const GroupView = () => {
     const navigate = useNavigate();
@@ -32,14 +33,12 @@ const GroupView = () => {
         setOpen(true);
     };
 
-    const handleClose = () => {
-        setOpen(false);
-        setSelectedMember(null);
-    };
 
     const toggleCollapse = () => {
         setCollapseOpen(!collapseOpen);
     };
+
+
 
     return (
         <Box p={2}>
@@ -95,72 +94,7 @@ const GroupView = () => {
                 </Button>
             </div>
 
-            <Typography variant='h4' style={{ fontWeight: '700', display: 'flex', justifyContent: "center", color: "#000435", marginTop: '32px' }}>Tax Details</Typography>
-            <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Status</TableCell>
-                            <TableCell align="right">Action</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell>{group.taxStatus}</TableCell>
-                            <TableCell align="right">
-                                <Button variant="contained" onClick={toggleCollapse} style={{ background: '#000435' }}>
-                                    View
-                                </Button>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell colSpan={2}>
-                                <Collapse in={collapseOpen}>
-                                    <Card>
-                                        <CardContent>
-                                            {/* Your tax details content here */}
-                                            <Typography variant="body2" color="textSecondary" component="p">
-                                                Tax Details content goes here. This can include more information about the tax status.
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                </Collapse>
-                            </TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
-
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-            >
-                <Box
-                    bgcolor="background.paper"
-                    p={2}
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 300,
-                        height: 350,
-                    }}
-                >
-                    {selectedMember && (
-                        <>
-                            <Typography variant="h6" gutterBottom>
-                                {selectedMember.name}
-                            </Typography>
-                            <img src={selectedMember.photo} alt="Profile" style={{ width: '100%', height: '80%', objectFit: 'cover' }} />
-                        </>
-                    )}
-                </Box>
-            </Modal>
-        </Box>
+        </Box >
     );
 };
 

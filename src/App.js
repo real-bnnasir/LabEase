@@ -3,6 +3,7 @@ import './App.css';
 import Sidebar from '../src/Compo/Sidebar/Sidebar';
 import Topbar from './Compo/Topbar/Topbar';
 import Main from './Compo/Main/Main';
+import LoginPage from './Compo/Login/LoginPage';
 
 function App() {
   // Initialize state from localStorage
@@ -28,9 +29,10 @@ function App() {
 
   return (
     <div className="app">
-      <Topbar onToggleSidebar={toggleSidebar} isOpen={sidebarOpen} />
+      {/* <Topbar onToggleSidebar={toggleSidebar} isOpen={sidebarOpen} />
       <Sidebar isOpen={sidebarOpen} />
-      <Main contentShift={contentShift} />
+      <Main contentShift={contentShift} /> */}
+      <LoginPage />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import me2 from '../../Assets/Photos/me2.jpg';
 import malik from '../../Assets/Photos/malik.jpg';
 import zaks from '../../Assets/Photos/zaks.jpg';
 import yaya from '../../Assets/Photos/yaya.JPG';
+import SubHeader from '../SubHeader';
 
 const HoverAvatar = styled(Avatar)({
   width: 40,
@@ -231,7 +232,7 @@ const Report = () => {
   let stripe = false;
 
   const handleViewClick = (group) => {
-    navigate(`/groupview/${group.id}/${group.segment}`);
+    navigate(`/reportview/${group.id}/${group.segment}`);
   };
 
   const handleViewClose = () => {
@@ -247,50 +248,12 @@ const Report = () => {
             <Typography variant="h6" textAlign='center'>Report</Typography>
           </Grid>
           <Divider />
-          <Grid item container spacing={2} alignItems="center" display='flex' justifyContent='space-between' style={{ marginTop: '8px' }}>
-            <Grid item>
-              <FormControl variant="outlined" style={{ minWidth: 200 }}>
-                <InputLabel id="course-select-label">Select Course</InputLabel>
-                <Select
-                  labelId="course-select-label"
-                  value={selectedCourse}
-                  onChange={handleCourseChange}
-                  label="Select Course"
-                >
-                  <MenuItem value=""><em>None</em></MenuItem>
-                  <MenuItem value="Biology">Biology</MenuItem>
-                  <MenuItem value="Chemistry">Chemistry</MenuItem>
-                  <MenuItem value="Physics">Physics</MenuItem>
-                  <MenuItem value="Mathematics">Mathematics</MenuItem>
-                  <MenuItem value="Computer Science">Computer Science</MenuItem>
-                  <MenuItem value="Environmental Science">Environmental Science</MenuItem>
-                  <MenuItem value="Astronomy">Astronomy</MenuItem>
-                  <MenuItem value="Geology">Geology</MenuItem>
-                  <MenuItem value="Statistics">Statistics</MenuItem>
-                  <MenuItem value="Biotechnology">Biotechnology</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item>
-              <ButtonGroup variant="contained">
-                {[1, 2, 3, 4].map((level) => (
-                  <Button
-                    key={level}
-                    onClick={() => handleButtonClick(level)}
-                    style={{
-                      backgroundColor: selectedLevel === level ? 'white' : 'initial',
-                      color: selectedLevel === level ? 'black' : 'initial',
-                    }}
-                  >
-                    Level {level}
-                  </Button>
-                ))}
-              </ButtonGroup>
-            </Grid>
-          </Grid>
-          <Grid container item display='flex' justifyContent='center' alignItems='center'>
-            <Typography style={{ fontWeight: '700' }}>{selectedCourse} Department</Typography>
-          </Grid>
+          <SubHeader />
+
+          <Divider />
+          {/* <Grid container item display='flex' justifyContent='center' alignItems='center'>
+            <Typography style={{ fontWeight: '700' }}>{selectedCourse} {selectedCourse ? 'Department' : ''}</Typography>
+          </Grid> */}
         </Grid>
         <Table>
           <TableHead>

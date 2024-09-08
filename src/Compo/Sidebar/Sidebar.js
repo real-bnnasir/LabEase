@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './sidebar.css';
 import logo from '../../Assets/logo/lab_logo.png'
 import { NavLink, } from 'react-router-dom';
@@ -6,12 +6,16 @@ import { RouteItem } from '../../Routes';
 
 const Sidebar = ({ isOpen }) => {
 
-    const navstyle = ({isActive}) => {
-        return {
-            backgroundColor: isActive ? 'red' : '',
-        }
-    }
-    const active = "bg-blue-100 text-black"
+    // const navstyle = ({ isActive }) => {
+    //     return {
+    //         backgroundColor: isActive ? 'red' : '',
+    //     }
+    // }
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const handleToggleDropdown = () => {
+        setDropdownVisible(!dropdownVisible);
+    };
 
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -21,19 +25,55 @@ const Sidebar = ({ isOpen }) => {
             </header>
             <hr />
             {/* <h2>Sidebar</h2> */}
-            {RouteItem.map((RouteItem) => (
-                <NavLink to={RouteItem.path} key={RouteItem.id} className='d-flex p-2 pb-1 pt-1 sidebar-link'>
-                    <div className='p-2  d-flex align-items-center links' ActiveClassName={active} >
-                        <div className='icon'>{RouteItem.icon}</div>
-                        <div className='name'>{RouteItem.name}</div>
-                    </div>
-                </NavLink>
+            {RouteItem.map((item) => (
+                <div key={item.id}>
+                    {item.name === 'Management' ? (
+                        <div>
+                            <div
+                                className='d-flex p-2 pb-1 pt-1 sidebar-link'
+                                onClick={handleToggleDropdown}
+                            >
+                                <div className='p-2 d-flex align-items-center links'>
+                                    <div className='icon'>{item.icon}</div>
+                                    <div className='name'>{item.name}</div>
+                                </div>
+                            </div>
+                            {dropdownVisible && (
+                                <div className='dropdown'>
+                                    {item.child.map((subItem) => (
+                                        <NavLink
+                                            to={subItem.path}
+                                            key={subItem.id}
+                                            className='dropdown-item d-flex p-2 pb-1 pt-1 sidebar-link'
+                                            activeClassName='active'
+                                        >
+                                            <div className='p-2 d-flex align-items-center links'>
+                                                <div className='name'>{subItem.name}</div>
+                                            </div>
+                                        </NavLink>
+                                    ))}
+                                    
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <NavLink
+                            to={item.path}
+                            key={item.id}
+                            className='d-flex p-2 pb-1 pt-1 sidebar-link'
+                            activeClassName='active'
+                        >
+                            <div className='p-2 d-flex align-items-center links'>
+                                <div className='icon'>{item.icon}</div>
+                                <div className='name'>{item.name}</div>
+                            </div>
+                        </NavLink>
+                    )}
+                </div>
             ))}
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
+            {/* <div className='logout-btn-container'>
+                <button className='logout-btn'>Log Out</button>
+            </div> */}
         </div>
     );
 };

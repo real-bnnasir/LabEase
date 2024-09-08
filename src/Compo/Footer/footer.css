@@ -1,0 +1,23 @@
+.ftrlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.rbn {
+    padding: 0;
+    margin: 0;
+    background: #000435;
+    color: white;
+    padding: 5px;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    outline: 4px solid #000435;
+}
