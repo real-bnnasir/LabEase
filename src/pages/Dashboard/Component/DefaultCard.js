@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Card, Divider, Typography } from '@mui/material'
 import { FaHome } from "react-icons/fa";
 
-const DefaultCard = ({ title, description, value, bgcolor, iconBgColor,icon,typocolor,descriptionbg,descriptioncolor }) => {
+const DefaultCard = ({ title, description, value, bgcolor, iconBgColor,icon,typocolor,descriptionbg,descriptioncolor,variant,fontSize }) => {
   return (
     <Card sx={{ backgroundColor: bgcolor }}>
       <Box p={2} mx={3} display="flex" justifyContent="center">
@@ -28,7 +28,7 @@ const DefaultCard = ({ title, description, value, bgcolor, iconBgColor,icon,typo
         <Typography variant="h6" fontWeight="medium" textTransform="capitalize" color={typocolor} >{title}</Typography>
         <Typography variant="caption" fontWeight="regular" color={descriptioncolor} sx={{background: descriptionbg,padding:'5px',borderRadius:'10px'}} >{description}</Typography>
         <Divider />
-        <Typography variant="h5" fontWeight="medium" color={typocolor} sx={{fontWeight:'700'}} >{value}</Typography>
+        <Typography variant={variant} fontSize={fontSize} fontWeight="medium" color={typocolor} sx={{fontWeight:'700'}} >{value}</Typography>
       </Box>
     </Card>
   )

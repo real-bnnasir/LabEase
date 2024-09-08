@@ -131,7 +131,7 @@ const TableContent = () => {
     <TableContainer component={Paper}>
       <Grid container direction="column" style={{ padding: '16px' }}>
         <Grid item display='flex' justifyContent='space-between' alignItems='center'>
-          <Typography variant="h6">Report</Typography>
+          <Typography variant="h6">Report Submissions</Typography>
           <TableCell>
             <Button variant="contained" component={Link} to="/report">More</Button>
           </TableCell>
